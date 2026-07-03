@@ -1,4 +1,4 @@
-# Autonomous Personal Productivity & Planning Agent
+# AutoSched - Autonomous Personal Productivity & Planning Agent
 
 This project simulates an agentic planner that observes tasks and past behavior,
 reasons about effort and urgency, generates realistic schedules, acts by outputting
