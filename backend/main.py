@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 import random
 
 from utils.helpers import load_json, save_json
@@ -9,8 +10,9 @@ from agent.reflection_engine import reflect_and_update
 from llm.llm_client import LLMClient
 
 
-TASKS_PATH = "inputs/tasks.json"
-MEMORY_PATH = "memory/user_history.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TASKS_PATH = os.path.join(BASE_DIR, "inputs", "tasks.json")
+MEMORY_PATH = os.path.join(BASE_DIR, "memory", "user_history.json")
 
 
 def main():

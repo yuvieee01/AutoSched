@@ -1,132 +1,17 @@
 {
   "past_runs": [
     {
-      "date": "2026-01-28T22:59:39.640738",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5",
-        "T4"
-      ],
-      "completed_task_ids": [
-        "T2",
-        "T4",
-        "T3",
-        "T1"
-      ],
-      "completion_rate": 80.0,
-      "insights": [
-        "Missed tasks correlate with overloaded schedules.",
-        "Large tasks are more likely to slip."
-      ]
-    },
-    {
-      "date": "2026-01-28T22:59:54.349895",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5",
-        "T4"
-      ],
-      "completed_task_ids": [
-        "T4",
-        "T1",
-        "T2"
-      ],
-      "completion_rate": 60.0,
-      "insights": [
-        "Missed tasks correlate with overloaded schedules.",
-        "Large tasks are more likely to slip."
-      ]
-    },
-    {
-      "date": "2026-01-28T23:00:47.259191",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5",
-        "T4"
-      ],
-      "completed_task_ids": [
-        "T1",
-        "T2"
-      ],
-      "completion_rate": 40.0,
-      "insights": [
-        "Missed tasks correlate with overloaded schedules.",
-        "Large tasks are more likely to slip."
-      ]
-    },
-    {
-      "date": "2026-01-28T23:00:51.619286",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5"
-      ],
-      "completed_task_ids": [
-        "T1",
-        "T2"
-      ],
-      "completion_rate": 50.0,
-      "insights": [
-        "Missed tasks correlate with overloaded schedules.",
-        "Large tasks are more likely to slip."
-      ]
-    },
-    {
-      "date": "2026-01-28T23:00:53.819918",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5"
-      ],
-      "completed_task_ids": [
-        "T1",
-        "T3",
-        "T5",
-        "T2"
-      ],
-      "completion_rate": 100.0,
-      "insights": [
-        "Missed tasks correlate with overloaded schedules.",
-        "Large tasks are more likely to slip."
-      ]
-    },
-    {
-      "date": "2026-07-12T13:12:57.420495",
-      "planned_task_ids": [
-        "T2",
-        "T1",
-        "T3",
-        "T5"
-      ],
-      "completed_task_ids": [
-        "T5",
-        "T2",
-        "T1",
-        "T3"
-      ],
-      "completion_rate": 100.0,
+      "date": "2026-07-12T13:16:03.823642",
+      "planned_task_ids": [],
+      "completed_task_ids": [],
+      "completion_rate": 0.0,
       "insights": [
         "Missed tasks correlate with overloaded schedules.",
         "Large tasks are more likely to slip."
       ]
     }
   ],
-  "preferences": {
-    "work_start": "09:00",
-    "work_end": "17:00",
-    "daily_capacity_hours": 8,
-    "estimation_bias": 1.09
-  },
   "aggregates": {
-    "average_completion_rate": 77.62,
-    "average_estimation_error_minutes": 0
+    "average_completion_rate": 0.0
   }
 }
