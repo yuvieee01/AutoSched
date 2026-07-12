@@ -214,10 +214,9 @@ body {
   display: flex;
   gap: 4px;
   padding: 32px 0 0;
+  width: calc(100% - 48px);
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 
 .tab {
@@ -262,12 +261,10 @@ body {
   border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
   border: 1px solid var(--border-color);
   padding: 32px;
-  margin: 0 auto;
+  margin: 0 auto 48px auto;
+  width: calc(100% - 48px);
   max-width: 1200px;
   min-height: 500px;
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 48px;
 }
 
 /* ============ SECTION HEADER ============ */
@@ -814,6 +811,32 @@ body {
   font-size: 14px;
   color: var(--text-tertiary);
   max-width: 360px;
+}
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow-xl);
+  animation: fadeInUp 0.3s ease-out;
 }
 
 /* ============ MODAL / FORM CARD ============ */

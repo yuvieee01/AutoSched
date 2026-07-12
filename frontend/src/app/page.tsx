@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import type { Task, SchedulePlan, Toast as ToastType } from "@/lib/types";
-import { loadTasks, saveTasks } from "@/lib/storage";
+import type { Task, SchedulePlan, Toast as ToastType, UserPreferences } from "@/lib/types";
+import { loadTasks, saveTasks, loadPreferences, savePreferences } from "@/lib/storage";
 import { runScheduler } from "@/lib/scheduler";
 import TaskForm from "@/components/TaskForm";
 import TaskList from "@/components/TaskList";
 import ScheduleView from "@/components/ScheduleView";
+import PreferencesModal from "@/components/PreferencesModal";
 
 type TabId = "tasks" | "schedule";
 
@@ -19,10 +20,13 @@ export default function HomePage() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [toasts, setToasts] = useState<ToastType[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [preferences, setPreferences] = useState<UserPreferences | null>(null);
+  const [showPreferences, setShowPreferences] = useState(false);
 
   // Load tasks on mount
   useEffect(() => {
     setTasks(loadTasks());
+    setPreferences(loadPreferences());
     // Load theme preference
     const savedTheme = localStorage.getItem("autosched_theme") as "light" | "dark" | null;
     if (savedTheme) {
@@ -92,7 +96,7 @@ export default function HomePage() {
       addToast("No pending tasks to schedule", "error");
       return;
     }
-    const plan = runScheduler(tasks);
+    const plan = runScheduler(tasks, preferences || undefined);
     setSchedule(plan);
     setActiveTab("schedule");
     addToast(
@@ -121,6 +125,15 @@ export default function HomePage() {
           </div>
 
           <div className="header-actions">
+            <button
+              className="btn-icon"
+              style={{ width: "28px", height: "28px", fontSize: "14px", border: "none", background: "transparent" }}
+              onClick={() => setShowPreferences(true)}
+              title="Work Preferences"
+              aria-label="Work Preferences"
+            >
+              ⚙️
+            </button>
             <button
               className="theme-toggle"
               onClick={toggleTheme}
@@ -218,6 +231,19 @@ export default function HomePage() {
           </div>
         ))}
       </div>
+
+      {showPreferences && preferences && (
+        <PreferencesModal
+          preferences={preferences}
+          onSave={(prefs) => {
+            setPreferences(prefs);
+            savePreferences(prefs);
+            setShowPreferences(false);
+            addToast("Preferences saved successfully", "success");
+          }}
+          onClose={() => setShowPreferences(false)}
+        />
+      )}
     </>
   );
 }
