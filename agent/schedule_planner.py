@@ -23,7 +23,7 @@ def plan_schedule(scored_tasks, memory, llm_client, date=None):
     total_available_minutes = int((work_end - work_start).total_seconds() / 60)
 
     # Daily capacity (stored as hours)
-    daily_capacity_hours = preferences.get("daily_capacity_minutes", 8)
+    daily_capacity_hours = preferences.get("daily_capacity_hours", 8)
     daily_capacity_minutes = int(daily_capacity_hours * 60)
 
     available_minutes = min(total_available_minutes, daily_capacity_minutes)
@@ -56,7 +56,6 @@ def plan_schedule(scored_tasks, memory, llm_client, date=None):
 
     overload = len(postponed) > 0
 
-    # Ask LLM for explanation
     context = {
         "overload": overload,
         "scheduled_tasks": schedule,

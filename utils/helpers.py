@@ -5,8 +5,10 @@ from datetime import datetime, time, timedelta
 def load_json(path, default=None):
     """
     Safely load JSON from disk.
-    Returns default if file does not exist.
+    Returns default (empty dict) if file does not exist.
     """
+    if default is None:
+        default = {}
     try:
         if not os.path.exists(path):
             return default

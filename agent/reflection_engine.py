@@ -45,8 +45,8 @@ def reflect_and_update(plan, completed_task_ids, memory, llm_client):
     # Capacity update (stored as hours)
     cap_delta_min = adjustments.get("daily_capacity_delta_minutes", 0)
     cap_delta_hr = cap_delta_min // 60
-    prefs["daily_capacity_minutes"] = max(
-        4, min(12, prefs.get("daily_capacity_minutes", 8) + cap_delta_hr)
+    prefs["daily_capacity_hours"] = max(
+        4, min(12, prefs.get("daily_capacity_hours", 8) + cap_delta_hr)
     )
 
     # ---- Save run history ----

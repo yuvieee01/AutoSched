@@ -93,4 +93,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n[Exit] Interrupted by user.")
+    except FileNotFoundError as e:
+        print(f"\n[Error] Required file not found: {e}")
+    except Exception as e:
+        print(f"\n[Error] An unexpected error occurred: {e}")
